@@ -5,7 +5,6 @@ import { render } from '../../../utils/test-util'
 
 test('Render Loader primary correctly', () => {
   render(<Loader variant='primary' />)
-  screen.debug()
   expect(screen.getByTestId('loader')).toHaveStyle(`
   border: 10px solid rgba(0,0,0,.1);
   width: 50px;

@@ -7,6 +7,8 @@ const StyledLoader = styled.div<Variant>`
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
   ${(props) => {
     switch (props.variant) {
       case "primary":
@@ -17,16 +19,8 @@ const StyledLoader = styled.div<Variant>`
         return css`
           border-left-color: ${props.theme.palette.secondary};
         `
-      case "default":
-        return css`
-          border-left-color: #e7e0db;
-        `
     }
-  }}
-  
-  animation: spin 1s linear infinite;
-  margin: 0 auto;
-  
+  }} 
   @keyframes spin{
   0%{
     transform: rotate(0deg);
@@ -39,7 +33,7 @@ const StyledLoader = styled.div<Variant>`
 
 export default function Loader({ variant }: Variant) {
   return (
-    <StyledLoader variant={variant} />
+    <StyledLoader variant={variant} data-testid="loader" />
   )
 }
 

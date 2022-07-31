@@ -9,7 +9,7 @@ interface Flip {
   flip: boolean
 }
 
-interface CardProps extends Character { }
+interface CardProps extends Omit<Character, 'id'> { }
 
 const StyledCard = styled.article<Flip>`
   display: flex;

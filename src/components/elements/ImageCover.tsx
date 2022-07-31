@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { RickAndMortyTheme } from "../../theme/theme";
 
 interface ImageCoverProps {
   image: string,
@@ -13,5 +14,6 @@ const StyledImageCover = styled.img`
 `
 
 export function ImageCover({ image, alt }: ImageCoverProps) {
-  return <StyledImageCover src={image} alt={alt} />
+  const rickAndMortyLogo = 'https://w0.peakpx.com/wallpaper/940/144/HD-wallpaper-rick-and-morty-logo-ultra-cartoons-others-logo-rickandmorty.jpg'
+  return <StyledImageCover src={image ? image : rickAndMortyLogo} alt={alt} />
 }

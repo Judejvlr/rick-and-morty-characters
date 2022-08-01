@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import getCharacters from '../services/getCharacters';
 import Character from '../types/character';
 
-const INITIAL_PAGE = 0
+const INITIAL_PAGE = 1
 
 export function useCharacters() {
   const [loading, setLoading] = useState(false)

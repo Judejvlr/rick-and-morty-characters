@@ -1,5 +1,5 @@
 import debounce from 'just-debounce-it';
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import { CardList } from '../components/blocks/CardList';
 import Loader from '../components/elements/Loader';
 // import i18n from '../config/i18n';
@@ -14,7 +14,7 @@ export default function CharactersList() {
     once: false
   })
 
-  const debounceHandleNextPage = useCallback(() => debounce(
+  const debounceHandleNextPage = useMemo(() => debounce(
     () => setPage((prevPage: number) => prevPage + 1), 200
   ), [setPage])
 

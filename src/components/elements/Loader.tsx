@@ -7,8 +7,8 @@ const StyledLoader = styled.div<Variant>`
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  margin: 2rem auto;
   animation: spin 1s linear infinite;
-  margin: 0 auto;
   ${(props) => {
     switch (props.variant) {
       case "primary":

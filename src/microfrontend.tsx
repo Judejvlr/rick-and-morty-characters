@@ -1,7 +1,7 @@
 import React from 'react';
 import App from './App';
 import { eventsToDispatch } from './events';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom';
 
 export interface MicrofrontendOptions {
   basePath: string;
@@ -13,21 +13,20 @@ export interface MicrofrontendOptions {
 
 export const render = (containerId: string, options: MicrofrontendOptions) => {
   const container = document.getElementById(containerId) as HTMLElement;
-  const root = createRoot(container);
   if (!container) return;
-  root.render(
+  ReactDOM.render(
     <React.StrictMode>
-      <App {...options.data} />
-    </React.StrictMode>
+      <App basePath={options.basePath} host={options.host} {...options.data} />
+    </React.StrictMode>,
+    container
   );
   console.log(`Micro-frontend ${containerId} mounted`);
 };
 
 export const unMount = (containerId: string) => {
   const container = document.getElementById(containerId) as HTMLElement;
-  const root = createRoot(container);
   if (!container) return;
-  root.unmount();
+  ReactDOM.unmountComponentAtNode(container);
   console.log(`Micro-frontend ${containerId} unmounted`);
 };
 

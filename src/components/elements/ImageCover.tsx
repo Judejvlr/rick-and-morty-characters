@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { RickAndMortyTheme } from "../../theme/theme";
 
 interface ImageCoverProps {
   image: string,
